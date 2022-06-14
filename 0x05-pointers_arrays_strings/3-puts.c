@@ -5,18 +5,11 @@
  * @s: validate the character
  * Return: Always 0.
  */
-void print_rev(char *s)
+void _puts(char *str)
 {
-	int i = 0;
-
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	i--;
-	for (; i >= 0; i--)
-	{
-		_putchar(s[i]);
-	}
-	_putchar('\n');
+        for (; i >= 0; i--)
+        {
+                _putchar(*str);
+        }
+        _putchar('\n');
 }
