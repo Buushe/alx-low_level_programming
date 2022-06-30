@@ -1,43 +1,46 @@
-#include <stdlib.h>
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * _calloc - function that allocates memory for an array, using malloc
- * @nmemb: input size 1
- * @size: input size bytes
- * Return: nothing
+ * _memset - prints buffer in hexa
+ * @s: buffer
+ * @b: write
+ * @n: size
+ * Return: Nothing.
  */
-
-void *_calloc(unsigned int nmemb, unsigned int size)
-{
-	void *cal;
-
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-	cal = malloc(nmemb * size);
-	if (cal == NULL)
-		return (NULL);
-	_memset(cal, 0, nmemb * size);
-	return (cal);
-}
-/**
- * _memset - function that fills memory with a constant byte.
- *
- * @s: mamory area to return
- * @b: constant byte
- * @n: size of bytes
- * Return: char
- */
-
 char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int i = 0;
+	unsigned int i;
 
-	while (i < n)
+	for (i = 0; i < n; i++)
 	{
-
 		*(s + i) = b;
-		i += 1;
 	}
 	return (s);
+}
+/**
+ * _calloc - function that concatenates two strings.
+ * @nmemb: string s1.
+ * @size: string s2.
+ *
+ * Return: Always 0.
+ */
+void *_calloc(unsigned int nmemb, unsigned int size)
+{
+	void *str;
+
+	if (nmemb == 0 || size == 0)
+	{
+		return (NULL);
+	}
+
+	str = malloc(nmemb * size);
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+	_memset(str, 0, nmemb * size);
+
+	return (str);
 }
