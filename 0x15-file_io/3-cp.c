@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include "holberton.h"
+#include "main.h"
 
 #ifndef BUFF_SIZE
 #define BUFF_SIZE 1024
